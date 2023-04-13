@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aniversário de 1 Ano de Namoro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+            color: #ff6b6b;
+        }
+
+        .countdown {
+            font-size: 48px;
+            font-weight: bold;
+            margin-top: 30px;
+            color: #ff6b6b;
+        }
+
+        .love-quote {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #ff6b6b;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .images img {
+            width: 150px;
+            margin: 0 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aniversário de 1 Ano de Namoro, Lindona</h1>
+    <div class="countdown">
+        <span id="timer">365</span> dias
+    </div>
+    <div class="love-quote" id="loveQuote"></div>
+    <div class="images">
+        <img src="https://www.petz.com.br/blog/wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg" alt="Gato fofo">
+        <img src="https://static5.depositphotos.com/1007682/477/v/950/depositphotos_4777198-stock-illustration-beautiful-heart.jpg" alt="Coração">
+        <img src="https://d3ugyf2ht6aenh.cloudfront.net/stores/124/083/products/cupcakes-cupcakedecorado1-4a78e9cedf0a5c783816139237197788-480-0.jpg" alt="Cupcake">
+    </div>
+
+    <script>
+        // Define a data de início e fim da contagem regressiva
+        var startDate = new Date('06/15/2022');
+        var endDate = new Date('06/15/2023');
+
+        // Calcula a diferença em dias entre a data atual e a data de início
+        var timeDifference = endDate - startDate;
+        var daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+        var daysRemaining = daysDifference; // Dias restantes inicialmente é igual à diferença total em dias
+        var timer = setInterval(function() {
+            daysRemaining--; // Decrementa 1 dia
+            document.getElementById('timer').textContent = daysRemaining; // Atualiza o valor do contador
+
+            // A cada 3 dias, exibe uma nova frase de amor
+            if (daysRemaining % 3 == 0) {
+                var loveQuotes = [
+                    "Você é a razão do meu sorriso, te amo mais a cada dia.",
+                    "Meu coração é seu para sempre, te amo além das palavras.",
+                    "Você é o meu porto seguro, te amo para sempre e além.",
+                    "Seu amor me completa, te amo de todo coração.",
+                    "Você é a minha pessoa especial, te amo intensamente.",
+                    // Adicione mais frases de amor aqui
+                ];
+
+                var randomIndex = Math.floor(Math.random() * loveQuotes.length);
+                document.getElementById('loveQuote').textContent = loveQuotes[randomIndex];
+            }
+
+            // Quando o tempo acabar,
+// Quando o tempo acabar, exibe uma mensagem de comemoração
+if (daysRemaining <= 0) {
+clearInterval(timer); // Limpa o intervalo do contador
+document.getElementById('timer').textContent = '0'; // Atualiza o contador para 0
+document.getElementById('loveQuote').textContent = 'Feliz Aniversário de 1 Ano de Namoro!'; // Mensagem de comemoração
+}
+}, 1000); // Atualiza o contador a cada 1 segundo
+</script>
+
+</body>
+</html>
